@@ -139,6 +139,8 @@ def input_error(func):
             return "Please provide a name to lookup the phone number."
         except KeyError:
             return "Name not found"
+        except FileNotFoundError:
+            return AddressBook()
     return inner
 
 @input_error
